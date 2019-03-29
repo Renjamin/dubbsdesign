@@ -1,3 +1,9 @@
 // Variables
 
 $playfair-display: "Playfair Display", serif;
+$font-weight-bold: 800;
+$font-weight-regular: 400;
+
+// Sizes
+$md-breakpoint-min: 1920;
+$wide-screen: "(min-width: #{$md-breakpoint-min}px)"; 

@@ -2,6 +2,11 @@
 
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,900");
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $playfair-display;
+  padding: 40px;
+  
+  &.bold {
+    font-weight: $font-weight-bold;
+  }
 }

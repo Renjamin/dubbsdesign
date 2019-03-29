@@ -8,6 +8,25 @@
   #{$prop}: #{$value};
 }
 
+
+@function get-vw($target) {
+  $vw-context: ($md-breakpoint-min * .01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
+@mixin vw($size) {
+  font-size: get-vw($size);
+  @media #{$wide-screen} {
+    font-size: $size;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie); //IE8
+}
+
 @mixin vertical-center {
   position: relative;
   top: 50%;
