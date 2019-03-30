@@ -8,9 +8,8 @@
   #{$prop}: #{$value};
 }
 
-
 @function get-vw($target) {
-  $vw-context: ($md-breakpoint-min * .01) * 1px;
+  $vw-context: ($max-breakpoint * .01) * 1px;
   @return ($target/$vw-context) * 1vw;
 }
 
