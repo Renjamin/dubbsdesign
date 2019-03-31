@@ -8,10 +8,45 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $dark-grey;
+  background-color: black;
   background-size: cover;
-  background-image: url('');
+  background-image: url("");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  @include prefix(
+    (
+      filter: blur(5px) contrast(10) saturate(0.8),
+      animation: shifting 2s infinite
+    ),
+    webkit
+  );
+}
+
+@include keyframes(shifting) {
+  0% {
+    @include prefix(
+      (
+        filter: blur(5px) contrast(10) saturate(0.8)
+      ),
+      webkit
+    );
+  }
+  50% {
+    @include prefix(
+      (
+        filter: blur(10px) contrast(20) saturate(0.8)
+      ),
+      webkit
+    );
+  }
+  100% {
+    @include prefix(
+      (
+        filter: blur(5px) contrast(10) saturate(0.8)
+      ),
+      webkit
+    );
+  }
 }

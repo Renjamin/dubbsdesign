@@ -1,15 +1,16 @@
 // Mixins
 
-@mixin css3-prefix($prop, $value) {
-  -webkit-#{$prop}: #{$value};
-  -moz-#{$prop}: #{$value};
-  -ms-#{$prop}: #{$value};
-  -o-#{$prop}: #{$value};
-  #{$prop}: #{$value};
+@mixin prefix($declarations, $prefixes: ()) {
+  @each $property, $value in $declarations {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+  }
 }
 
 @function get-vw($target) {
-  $vw-context: ($max-breakpoint * .01) * 1px;
+  $vw-context: ($max-breakpoint * 0.01) * 1px;
   @return ($target/$vw-context) * 1vw;
 }
 
