@@ -1,6 +1,6 @@
 // Variables
 
-$playfair-display: "Playfair Display", serif;
+$playfair-display: 'Oxygen', sans-serif;
 $font-weight-bold: 800;
 $font-weight-regular: 400;
 
@@ -18,4 +18,7 @@ $max-breakpoint: 1920; // Don't give it a pixel size, variable below applies it.
 $wide-screen: "(min-width: #{$max-breakpoint}px)";
 
 // Colours
+$lighter-grey: gainsboro;
+$light-grey: lightgray;
+$medium-grey: darkgray;
 $dark-grey: #212121;
