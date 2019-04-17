@@ -15,7 +15,7 @@ $lg-breakpoint-max: 1199px;
 $xl-breakpoint-min: 1200px;
 $xl-breakpoint-max: 1600px;
 $max-breakpoint: 1920; // Don't give it a pixel size, variable below applies it.
-$wide-screen: "(min-width: #{$max-breakpoint}px)";
+$wide-screen: "(min-width: #{$max-breakpoint})px";
 
 // Colours
 $lighter-grey: gainsboro;

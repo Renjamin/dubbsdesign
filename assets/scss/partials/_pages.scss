@@ -38,8 +38,8 @@ body {
   padding: 0;
   z-index: 7;
   display: flex;
-  align-items: center;
-  align-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
   flex-wrap: wrap;
   position: absolute;
   overflow: visible;
@@ -69,15 +69,23 @@ body {
         @include vw(14px);
 
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: 70px;
           left: 40px;
           width: 200px;
           height: 2px;
-          background-color: rgba(255, 255, 255, 0.10);
+          background-color: rgba(255, 255, 255, 0.1);
         }
       }
+    }
+  }
+
+  img {
+    &#logo {
+      padding: 40px 0 0 40px;
+      margin: 0;
+      width: 150px;
     }
   }
 }
