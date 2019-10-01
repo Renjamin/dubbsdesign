@@ -23,12 +23,12 @@ body {
   clip-path: polygon(0 0, 93% 0, 55% 100%, 0% 100%);
   background-color: rgba(21, 21, 21, 0.9);
 
-  @include gradient($dark-grey, rgba(0, 0, 0, 0.6), horizontal);
-
   @media screen and (max-width: $sm-breakpoint-max) {
     -webkit-clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
     clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
   }
+
+  @include gradient($dark-grey, rgba(0, 0, 0, 0.6), horizontal);
 }
 
 #cover-content {
