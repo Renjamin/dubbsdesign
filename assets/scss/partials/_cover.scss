@@ -1,0 +1,87 @@
+#cover {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    overflow: visible;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.25s;
+    -webkit-clip-path: polygon(0 0, 93% 0, 55% 100%, 0% 100%);
+    clip-path: polygon(0 0, 93% 0, 55% 100%, 0% 100%);
+    background-color: rgba(21, 21, 21, 0.9);
+
+    @media screen and (max-width: $sm-breakpoint-max) {
+        -webkit-clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
+        clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
+    }
+
+    @include gradient($dark-grey, rgba(0, 0, 0, 40), horizontal);
+}
+
+#cover-content {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 7;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    position: absolute;
+    overflow: visible;
+    top: 0;
+    left: 0;
+    transition: all 0.25s;
+
+    .written-content {
+        z-index: 50;
+        width: calc(50% + 200px);
+
+        h1 {
+            color: white;
+            @include vw(70px);
+        }
+
+        p {
+            color: $lighter-grey;
+            line-height: calc(1.1em + 0.5vw);
+            @include vw(25px);
+
+            &:nth-child(3) {
+                width: calc(40% + 200px);
+                position: absolute;
+                bottom: 70px;
+                color: $medium-grey;
+                @include vw(14px);
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 70px;
+                    left: 40px;
+                    width: 200px;
+                    height: 2px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+    }
+
+    img {
+        &#logo {
+            padding: 40px 0 0 40px;
+            margin: 0;
+            width: 150px;
+            pointer-events: none;
+        }
+    }
+}
