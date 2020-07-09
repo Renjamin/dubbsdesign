@@ -13,7 +13,6 @@
     top: 0;
     left: 0;
     pointer-events: none;
-    transition: all 0.25s;
     -webkit-clip-path: polygon(0 0, 93% 0, 55% 100%, 0% 100%);
     clip-path: polygon(0 0, 93% 0, 55% 100%, 0% 100%);
     background-color: rgba(21, 21, 21, 0.9);
@@ -23,7 +22,8 @@
         clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
     }
 
-    @include gradient($dark-grey, rgba(0, 0, 0, 40), horizontal);
+    @include gradient($dark-grey, rgba(0, 0, 0, 0.6), horizontal);
+    @include transition(all, 0.25s, ease-in-out);
 }
 
 #cover-content {
