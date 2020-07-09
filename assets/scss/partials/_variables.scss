@@ -1,7 +1,7 @@
 // Variables
-
-$playfair-display: "Playfair Display", serif;
-$font-weight-bold: 800;
+$open-sans: "Open Sans", sans-serif;
+$merriweather: "Merriweather", serif;
+$font-weight-bold: 700;
 $font-weight-regular: 400;
 
 // Sizes
@@ -15,7 +15,10 @@ $lg-breakpoint-max: 1199px;
 $xl-breakpoint-min: 1200px;
 $xl-breakpoint-max: 1600px;
 $max-breakpoint: 1920; // Don't give it a pixel size, variable below applies it.
-$wide-screen: "(min-width: #{$max-breakpoint}px)";
+$wide-screen: "(min-width: #{$max-breakpoint})px";
 
 // Colours
+$lighter-grey: gainsboro;
+$light-grey: lightgray;
+$medium-grey: darkgray;
 $dark-grey: #212121;

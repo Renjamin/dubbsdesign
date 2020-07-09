@@ -84,9 +84,9 @@ particlesJS('particles-js',
         },
         "bubble": {
           "distance": 400,
-          "size": 40,
+          "size": 20,
           "duration": 2,
-          "opacity": 3,
+          "opacity": 0.3,
           "speed": 3
         },
         "repulse": {
