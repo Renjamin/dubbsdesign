@@ -10,18 +10,11 @@
     left: 0;
     pointer-events: none;
 
-    @media screen and (max-width: $sm-breakpoint-max) {
-        -webkit-clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
-        clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
-    }
-
     @include flexbox;
     @include align-items(center);
     @include align-content(center);
     @include flex-wrap(wrap);
-
     @include gradient($dark-grey, rgba(0, 0, 0, 0.6), horizontal);
-    @include transition(all, 0.25s, ease-in-out);
 
     .bg-gradient {
         height: 100%;
@@ -34,7 +27,14 @@
         -webkit-clip-path: polygon(0 0, 93% 0, 55% 100%, 0% 100%);
         clip-path: polygon(0 0, 93% 0, 55% 100%, 0% 100%);
         background-color: rgba(21, 21, 21, 0.9);
+
+        @media screen and (max-width: $sm-breakpoint-max) {
+            -webkit-clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
+            clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
+        }
+
         @include opacity(0.4);
+        @include transition(all, 0.25s, ease-in-out);
     }
 
     @include keyframes(bg-animation) {
