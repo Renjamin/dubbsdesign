@@ -68,35 +68,14 @@
 
     .written-content {
         z-index: 50;
-        width: calc(50% + 200px);
+        width: calc(100% - 80px);
+        @include flexbox;
 
         h1 {
+            font-family: $merriweather;
+            font-weight: $font-weight-regular;
             color: white;
-            @include vw(70px);
-        }
-
-        p {
-            color: $lighter-grey;
-            line-height: calc(1.1em + 0.5vw);
-            @include vw(25px);
-
-            &:nth-child(3) {
-                width: calc(40% + 200px);
-                position: absolute;
-                bottom: 70px;
-                color: $medium-grey;
-                @include vw(14px);
-
-                &:after {
-                    content: "";
-                    position: absolute;
-                    bottom: 70px;
-                    left: 40px;
-                    width: 200px;
-                    height: 2px;
-                    background-color: rgba(255, 255, 255, 0.1);
-                }
-            }
+            @include vw(36px);
         }
     }
 
