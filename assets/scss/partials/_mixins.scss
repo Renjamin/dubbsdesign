@@ -206,7 +206,11 @@
   
   @if $value == nowrap {
     -ms-flex-wrap: none;
-  } 
+  }
+
+  @else if $value == wrap {
+    @include clearfix;
+  }
   
   @else {
     -ms-flex-wrap: $value;
