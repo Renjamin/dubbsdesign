@@ -24,6 +24,30 @@
 
     @include gradient($dark-grey, rgba(0, 0, 0, 0.6), horizontal);
     @include transition(all, 0.25s, ease-in-out);
+
+    .bg-gradient {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(239deg, $light-grey, $dark-grey, $flamingo);
+        background-size: 600% 600%;
+        -webkit-animation: bg-animation 15s ease infinite;
+        -moz-animation: bg-animation 15s ease infinite;
+        animation: bg-animation 15s ease infinite;
+
+        @include opacity(0.4);
+    }
+
+    @include keyframes(bg-animation) {
+        0% {
+            background-position: 0 81%;
+        }
+        50% {
+            background-position: 100% 20%;
+        }
+        100% {
+            background-position: 0 81%;
+        }
+    }
 }
 
 #cover-content {
