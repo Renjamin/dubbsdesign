@@ -59,6 +59,14 @@
     z-index: 7;
     transition: all 0.25s;
 
+    @media screen and (min-width: $wide-screen) {
+        width: calc(1600px + 10%);
+    }
+
+    @media screen and (min-width: $ultra-wide-4k) {
+        width: 100%;
+    }
+
     @include flexbox;
     @include align-items(flex-start);
     @include align-content(flex-start);
@@ -85,12 +93,31 @@
                 width: 32%;
             }
 
+            @media screen and (max-width: 1699px) {
+                width: 33.333333%;
+            }
+
             h1 {
                 font-family: $merriweather;
                 font-weight: $font-weight-regular;
                 color: white;
                 font-size: 30px;
                 line-height: 36px;
+
+                @media screen and (min-width: $ultra-wide-4k) {
+                    font-size: 62px;
+                    line-height: 68px;
+                }
+
+                @media screen and (max-width: 1699px) {
+                    font-size: 28px;
+                    line-height: 34px;
+                }
+
+                @media screen and (max-width: 1366px) {
+                    font-size: 24px;
+                    line-height: 30px;
+                }
             }
         }
     }
@@ -100,10 +127,11 @@
         width: 100%;
         height: calc(20% - 100px);
         margin-bottom: 40px;
+
         @include flexbox;
         @include flex-direction(row);
         @include flex-wrap(wrap);
-        @include justify-content(space-evenly);
+        @include justify-content(space-around);
         @include align-items(flex-end);
         @include transition(all, 0.25s, ease-in-out);
 
@@ -112,13 +140,23 @@
             max-width: 100%;
             padding: 15px;
 
-            &:first-child {
-                padding: 15px 15px 15px 0;
-            }
-
             &:nth-child(3) {
                 width: 125px;
             }
+
+            @media screen and (min-width: $ultra-wide-4k) {
+                width: 250px;
+            }
+
+            @media screen and (max-width: 1470px) {
+                margin: 40px;
+
+                &:nth-child(3) {
+                    width: 125px;
+                }
+            }
+
+            @include transition(all, 0.25s, ease-in-out);
         }
     }
 
@@ -129,6 +167,10 @@
             margin: 0;
             width: 150px;
             pointer-events: none;
+
+            @media screen and (min-width: $ultra-wide-4k) {
+                width: 300px;
+            }
         }
     }
 }

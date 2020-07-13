@@ -133,6 +133,7 @@
 
 // Flexbox Mixins
 
+// fg = flex grow, fs = flex-shrink, fb = flex-basis
 @mixin flex($fg: 1, $fs: 0, $fb: auto) {
 
   // Set a variable to be used by box-flex properties
