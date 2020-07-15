@@ -67,20 +67,24 @@
     }
 
     @include flexbox;
-    @include align-items(flex-start);
-    @include align-content(flex-start);
     @include flex-wrap(wrap);
 
-    img {
-        &#logo {
-            z-index: 50;
-            padding: 40px 0 0 40px;
-            margin: 0;
-            width: 150px;
-            pointer-events: none;
+    .img-container {
+        padding: 0;
+        margin: 0;
+        @include clearfix;
 
-            @media screen and (min-width: $ultra-wide-4k) {
-                width: 300px;
+        img {
+            &#logo {
+                z-index: 50;
+                padding: 40px 0 0 40px;
+                margin: 0;
+                width: 150px;
+                pointer-events: none;
+
+                @media screen and (min-width: $ultra-wide-4k) {
+                    width: 300px;
+                }
             }
         }
     }
@@ -88,7 +92,7 @@
     .written-content {
         z-index: 50;
         width: 100%;
-        height: calc(80% - 200px);
+        margin: 80px auto 40px auto;
         @include flexbox;
         @include flex-direction(row);
         @include flex-wrap(wrap);
@@ -97,7 +101,6 @@
         @include transition(all, 0.25s, ease-in-out);
 
         @media screen and (max-width: $lg-breakpoint-min) {
-            margin: 80px auto;
             @include justify-content(flex-start);
             @include clearfix;
         }
@@ -157,7 +160,6 @@
     .client-logos {
         z-index: 50;
         width: 100%;
-        height: calc(20% - 100px);
         margin-bottom: 40px;
 
         @include flexbox;
@@ -171,6 +173,7 @@
             width: 185px;
             max-width: 100%;
             padding: 15px;
+            margin: 0;
 
             &:nth-child(3) {
                 width: 125px;

@@ -16,5 +16,5 @@ canvas {
   background-repeat: no-repeat;
   overflow: scroll;
 
-  @include gradient($dark-grey, rgba(0, 0, 0, 0.9), horizontal);
+  @include gradient($dark-grey, rgba(0, 0, 0, 1), horizontal);
 }
