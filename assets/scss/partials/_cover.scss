@@ -14,7 +14,6 @@
     @include align-items(center);
     @include align-content(center);
     @include flex-wrap(wrap);
-    @include gradient($dark-grey, rgba(0, 0, 0, 0.6), horizontal);
 
     .bg-gradient {
         height: 100%;
@@ -26,11 +25,11 @@
         animation: bg-animation 10s ease infinite;
         -webkit-clip-path: polygon(0 0, 93% 0, 55% 100%, 0% 100%);
         clip-path: polygon(0 0, 93% 0, 55% 100%, 0% 100%);
-        background-color: rgba(21, 21, 21, 0.9);
 
-        @media screen and (max-width: $sm-breakpoint-max) {
-            -webkit-clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
-            clip-path: polygon(0 0, 88% 0, 48% 100%, 0% 100%);
+        @media screen and (max-width: 1470px) {
+            -webkit-clip-path: polygon(0% 0%, 77% 0%, 0% 100%);
+            clip-path: polygon(0% 0%, 77% 0%, 0% 100%);
+            @include transition(all, 0.25s, ease-in-out);
         }
 
         @include opacity(0.4);
@@ -72,6 +71,20 @@
     @include align-content(flex-start);
     @include flex-wrap(wrap);
 
+    img {
+        &#logo {
+            z-index: 50;
+            padding: 40px 0 0 40px;
+            margin: 0;
+            width: 150px;
+            pointer-events: none;
+
+            @media screen and (min-width: $ultra-wide-4k) {
+                width: 300px;
+            }
+        }
+    }
+
     .written-content {
         z-index: 50;
         width: 100%;
@@ -85,7 +98,6 @@
 
         @media screen and (max-width: $lg-breakpoint-min) {
             margin: 80px auto;
-            @include flex-direction(row);
             @include justify-content(flex-start);
             @include clearfix;
         }
@@ -152,7 +164,7 @@
         @include flex-direction(row);
         @include flex-wrap(wrap);
         @include justify-content(space-around);
-        @include align-items(flex-end);
+        @include align-items(center);
         @include transition(all, 0.25s, ease-in-out);
 
         img {
@@ -177,20 +189,6 @@
             }
 
             @include transition(all, 0.25s, ease-in-out);
-        }
-    }
-
-    img {
-        &#logo {
-            z-index: 50;
-            padding: 40px 0 0 40px;
-            margin: 0;
-            width: 150px;
-            pointer-events: none;
-
-            @media screen and (min-width: $ultra-wide-4k) {
-                width: 300px;
-            }
         }
     }
 }

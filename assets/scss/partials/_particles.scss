@@ -14,5 +14,7 @@ canvas {
   background-image: url("");
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow: scroll;
+
+  @include gradient($dark-grey, rgba(0, 0, 0, 0.9), horizontal);
 }
