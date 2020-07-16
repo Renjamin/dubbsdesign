@@ -1,6 +1,8 @@
 canvas {
   z-index: 2;
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
 #particles-js {
@@ -16,6 +18,5 @@ canvas {
   background-repeat: no-repeat;
   overflow: scroll;
   
-
   @include gradient($dark-grey, rgba(0, 0, 0, 1), horizontal);
 }
