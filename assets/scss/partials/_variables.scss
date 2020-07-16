@@ -16,9 +16,11 @@ $xl-breakpoint-min: 1200px;
 $xl-breakpoint-max: 1600px;
 $max-breakpoint: 1920; // Don't give it a pixel size, variable below applies it.
 $wide-screen: "(min-width: #{$max-breakpoint})px";
+$ultra-wide-4k: 3840px;
 
 // Colours
 $lighter-grey: gainsboro;
 $light-grey: lightgray;
 $medium-grey: darkgray;
 $dark-grey: #212121;
+$flamingo: #e61972;
