@@ -66,24 +66,24 @@
   transition: $element $speed $flow;
 }
 
-@mixin animation ($delay, $duration, $animation, $direction: forward, $fillmode: fowards) {
-    -webkit-animation-delay: $delay;
-    -webkit-animation-duration: $duration;
-    -webkit-animation-name: $animation;
-    -webkit-animation-fill-mode: $fillmode;
-    -webkit-animation-direction: $direction;
+@mixin animation($delay, $duration, $animation, $direction: forward, $fillmode: fowards) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-fill-mode: $fillmode;
+  -webkit-animation-direction: $direction;
 
-    -moz-animation-delay: $delay;
-    -moz-animation-duration: $duration;
-    -moz-animation-name: $animation;
-    -moz-animation-fill-mode: $fillmode;
-    -moz-animation-direction: $direction;
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-fill-mode: $fillmode;
+  -moz-animation-direction: $direction;
 
-    animation-delay: $delay;
-    animation-duration: $duration;
-    animation-name: $animation;
-    animation-fill-mode: $fillmode;
-    animation-direction: $direction;
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-fill-mode: $fillmode;
+  animation-direction: $direction;
 }
 
 @mixin rounded($radius: 0.5em) {
@@ -130,14 +130,10 @@
   @if $orientation == "vertical" {
     background: -webkit-linear-gradient(top, $start-color, $end-color);
     background: linear-gradient(to bottom, $start-color, $end-color);
-  } 
-  
-  @else if $orientation == "horizontal" {
+  } @else if $orientation == "horizontal" {
     background: -webkit-linear-gradient(left, $start-color, $end-color);
     background: linear-gradient(to right, $start-color, $end-color);
-  } 
-  
-  @else {
+  } @else {
     background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
     background: radial-gradient(ellipse at center, $start-color, $end-color);
   }
@@ -155,13 +151,12 @@
 
 // fg = flex grow, fs = flex-shrink, fb = flex-basis
 @mixin flex($fg: 1, $fs: 0, $fb: auto) {
-
   // Set a variable to be used by box-flex properties
   $fg-boxflex: $fg;
 
   // Box-Flex only supports a flex-grow value so lets grab the
   // first item in the list and just return that.
-  @if type-of($fg) == 'list' {
+  @if type-of($fg) == "list" {
     $fg-boxflex: nth($fg, 1);
   }
 
@@ -194,23 +189,17 @@
     -webkit-box-orient: horizontal;
     -moz-box-direction: reverse;
     -moz-box-orient: horizontal;
-  } 
-  
-  @else if $value == column {
+  } @else if $value == column {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -moz-box-direction: normal;
     -moz-box-orient: vertical;
-  } 
-  
-  @else if $value == column-reverse {
+  } @else if $value == column-reverse {
     -webkit-box-direction: reverse;
     -webkit-box-orient: vertical;
     -moz-box-direction: reverse;
     -moz-box-orient: vertical;
-  } 
-  
-  @else {
+  } @else {
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
     -moz-box-direction: normal;
@@ -224,16 +213,12 @@
 
 @mixin flex-wrap($value: nowrap) {
   -webkit-flex-wrap: $value;
-  
+
   @if $value == nowrap {
     -ms-flex-wrap: none;
-  }
-
-  @else if $value == wrap {
+  } @else if $value == wrap {
     @include clearfix;
-  }
-  
-  @else {
+  } @else {
     -ms-flex-wrap: $value;
   }
 
@@ -268,25 +253,17 @@
     -webkit-box-pack: start;
     -moz-box-pack: start;
     -ms-flex-pack: start;
-  } 
-  
-  @else if $value == flex-end {
+  } @else if $value == flex-end {
     -webkit-box-pack: end;
     -moz-box-pack: end;
     -ms-flex-pack: end;
-  } 
-  
-  @else if $value == space-between {
+  } @else if $value == space-between {
     -webkit-box-pack: justify;
     -moz-box-pack: justify;
     -ms-flex-pack: justify;
-  } 
-  
-  @else if $value == space-around {
+  } @else if $value == space-around {
     -ms-flex-pack: distribute;
-  }
-  
-  @else {
+  } @else {
     -webkit-box-pack: $value;
     -moz-box-pack: $value;
     -ms-flex-pack: $value;
@@ -301,15 +278,11 @@
     -webkit-box-align: start;
     -moz-box-align: start;
     -ms-flex-align: start;
-  } 
-  
-  @else if $value == flex-end {
+  } @else if $value == flex-end {
     -webkit-box-align: end;
     -moz-box-align: end;
     -ms-flex-align: end;
-  } 
-  
-  @else {
+  } @else {
     -webkit-box-align: $value;
     -moz-box-align: $value;
     -ms-flex-align: $value;
@@ -324,16 +297,12 @@
 
   @if $value == flex-start {
     -ms-flex-item-align: start;
-  } 
-  
-  @else if $value == flex-end {
+  } @else if $value == flex-end {
     -ms-flex-item-align: end;
-  } 
-  
-  @else {
+  } @else {
     -ms-flex-item-align: $value;
   }
-  
+
   align-self: $value;
 }
 
@@ -342,15 +311,11 @@
 
   @if $value == flex-start {
     -ms-flex-line-pack: start;
-  } 
-  
-  @else if $value == flex-end {
+  } @else if $value == flex-end {
     -ms-flex-line-pack: end;
-  } 
-  
-  @else {
+  } @else {
     -ms-flex-line-pack: $value;
   }
-  
+
   align-content: $value;
 }
