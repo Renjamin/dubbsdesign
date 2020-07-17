@@ -15,6 +15,17 @@
     @include align-content(center);
     @include flex-wrap(wrap);
 
+    @include keyframes(fade-page) {
+        0% {
+            @include opacity(0);
+        }
+        100% {
+            @include opacity(1);
+        }
+    }
+
+    @include animation(0.5s, 2s, fade-page, normal, forwards);
+
     .bg-gradient {
         height: 100%;
         width: 100%;
@@ -34,17 +45,17 @@
 
         @include opacity(0.4);
         @include transition(all, 0.25s, ease-in-out);
-    }
 
-    @include keyframes(bg-animation) {
-        0% {
-            background-position: 0 81%;
-        }
-        50% {
-            background-position: 100% 20%;
-        }
-        100% {
-            background-position: 0 81%;
+        @include keyframes(bg-animation) {
+            0% {
+                background-position: 0 81%;
+            }
+            50% {
+                background-position: 100% 20%;
+            }
+            100% {
+                background-position: 0 81%;
+            }
         }
     }
 }
