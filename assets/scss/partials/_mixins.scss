@@ -36,6 +36,14 @@
   transform: translateY(-50%);
 }
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
     @content;
@@ -50,20 +58,32 @@
   }
 }
 
-@mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
 @mixin transition($element, $speed, $flow) {
   -webkit-transition: $element $speed $flow;
   -moz-transition: $element $speed $flow;
   -ms-transition: $element $speed $flow;
   -o-transition: $element $speed $flow;
   transition: $element $speed $flow;
+}
+
+@mixin animation ($delay, $duration, $animation, $direction: forward, $fillmode: fowards) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: $fillmode;
+    -webkit-animation-direction: $direction;
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: $fillmode;
+    -moz-animation-direction: $direction;
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: $fillmode;
+    animation-direction: $direction;
 }
 
 @mixin rounded($radius: 0.5em) {
