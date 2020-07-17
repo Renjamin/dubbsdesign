@@ -86,6 +86,12 @@
   animation-direction: $direction;
 }
 
+@mixin transform($content) {
+  -webkit-transform: $content;
+  -ms-transform: $content;
+  transform: $content;
+}
+
 @mixin rounded($radius: 0.5em) {
   border-top-left-radius: $radius !important;
   border-top-right-radius: $radius !important;
