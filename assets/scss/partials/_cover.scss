@@ -170,6 +170,48 @@
         }
     }
 
+    .button-container {
+        z-index: 100;
+        width: 100%;
+        margin-left: 40px;
+
+        @include flexbox;
+        @include flex-direction(row);
+        @include flex-wrap(wrap);
+        @include align-items(center);
+        @include transition(all, 0.25s, ease-in-out);
+
+        @media screen and (max-width: $md-breakpoint-max) {
+            margin-bottom: 40px; 
+        }
+
+        a {
+            &.btn {
+                padding: 16px 25px;
+                margin: 0;
+                border-radius: 4px;
+                pointer-events: all;
+                font-size: 18px;
+                color: white;
+                text-decoration: none;
+                border-top: 1px solid rgba(33,33,33, 0.5);
+                border-bottom: 1px solid white;
+                
+
+                @include gradient-angle(200deg, $dark-grey, $flamingo);
+                @include shadow();
+                @include transition(all, 0.25s, ease-in-out);
+                
+                &:focus,
+                &:hover,
+                &:active {
+                    border-top: 1px solid rgba(33,33,33, 0.1);
+                    border-bottom: 1px solid rgba(255,255,255, 0.2);
+                } 
+            }
+        }
+    }
+
     .client-logos {
         z-index: 50;
         width: 100%;
